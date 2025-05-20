@@ -1,0 +1,6 @@
+@Panase.Presentation_HostAddress = http://localhost:5003
+
+GET {{Panase.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
