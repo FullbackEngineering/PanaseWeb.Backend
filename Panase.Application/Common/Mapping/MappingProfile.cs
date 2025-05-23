@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
-using Panase.Application.Feature.Appointments.Commands;
-using Panase.Application.Feature.Appointments.Dtos;
-using Panase.Application.Feature.Doctors.Commands;
-using Panase.Application.Feature.Doctors.Dtos;
-using Panase.Application.Feature.Patients.Commands;
-using Panase.Application.Feature.Patients.Dtos;
-using Panase.Application.Feature.Patients.Queries;
+using Panase.Application.Features.Appointments.Commands;
+using Panase.Application.Features.Appointments.Dtos;
+using Panase.Application.Features.Doctors.Commands;
+using Panase.Application.Features.Doctors.Dtos;
+using Panase.Application.Features.Patients.Commands;
+using Panase.Application.Features.Patients.Dtos;
+using Panase.Application.Features.Patients.Queries;
+using Panase.Application.Features.SessionNotes.Commands;
+using Panase.Application.Features.SessionNotes.Dtos;
 using Panase.Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -33,6 +35,10 @@ namespace Panase.Application.Common.Mapping
             CreateMap<Doctor, DoctorDto>().ReverseMap();
             CreateMap<Doctor, CreateDoctorCommand>().ReverseMap();
             CreateMap<Doctor, UpdateDoctorCommand>().ReverseMap();
+
+            CreateMap<SessionNote, SessionNoteDto>().ReverseMap();
+            CreateMap<SessionNote, CreateSessionNoteCommand>().ReverseMap();
+            CreateMap<SessionNote, UpdateSessionNoteCommand>().ReverseMap();
 
 
 

@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Panase.Application.Feature.Appointments.Commands;
-using Panase.Application.Feature.Appointments.Queries;
+using Panase.Application.Features.Appointments.Commands;
+using Panase.Application.Features.Appointments.Queries;
 
 namespace Panase.Presentation.Controllers
 {

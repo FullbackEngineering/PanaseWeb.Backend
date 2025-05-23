@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Panase.Core.Entities
 {
-    public class Doctor:BaseEntity
+    public class Doctor : BaseEntity
     {
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string Specialty { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
 
-        public string LastName { get; set; }
-
-        public string Specialty { get; set; }
-
-        public string Email { get; set; }
-
-        public string PhoneNumber { get; set; }
-
-        // Doktorun randevuları
+        // Randevular
         public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
+        // Zorunlu User bağlantısı (1-1)
+        public Guid UserId { get; set; }
+        public User User { get; set; } = null!;
     }
+
 }

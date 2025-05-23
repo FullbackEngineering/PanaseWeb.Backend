@@ -13,7 +13,7 @@ namespace Panase.Infrastructure.Data
         public ApiContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApiContext>();
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=PanaseDb;Username=postgres;Password=Eren9696;Timeout=10;SSL Mode=Prefer");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=PanaseDb;Username=postgres;Password=Eren9696;");
 
             return new ApiContext(optionsBuilder.Options);
         }

@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Panase.Application.Feature.Doctors.Commands;
-using Panase.Application.Feature.Doctors.Queries;
+using Panase.Application.Features.Doctors.Commands;
+using Panase.Application.Features.Doctors.Queries;
 
 namespace Panase.Presentation.Controllers
 {

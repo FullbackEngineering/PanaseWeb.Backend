@@ -3,9 +3,13 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Panase.Application.Common.Mapping;
-using Panase.Application.Feature.Appointments.Validators;
-using Panase.Application.Feature.Doctors.Validators;
-using Panase.Application.Feature.Patients.Validators;
+using Panase.Application.Features.Appointments.Validators;
+using Panase.Application.Features.Doctors.Validators;
+using Panase.Application.Features.Patients.Validators;
+using Panase.Application.Features.SessionNotes.Validators;
+using Panase.Application.Features.Users.Login.Validators;
+using Panase.Application.Features.Users.Register.Validators;
+using Panase.Core.JwtToken;
 
 namespace Panase.Application
 {
@@ -19,10 +23,17 @@ namespace Panase.Application
             // AutoMapper kayıtları
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
             // FluentValidation kayıtları (örneğin Patient validator)
             services.AddValidatorsFromAssemblyContaining<CreatePatientCommandValidator>();
             services.AddValidatorsFromAssemblyContaining<CreateAppointmentCommandValidator>();
             services.AddValidatorsFromAssemblyContaining<CreateDoctorCommandValidator>();
+            services.AddValidatorsFromAssemblyContaining<CreateSessionNoteCommandValidator>();
+            services.AddValidatorsFromAssemblyContaining<RegisterCommandValidator>();
+            services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
+            
+
 
             return services;
         }
